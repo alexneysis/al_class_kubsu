@@ -1,0 +1,10 @@
+# Virtual environment
+venv
+
+# IDEA files
+.idea
+
+# Files in dataset
+*User.*
+
+*.mp4
