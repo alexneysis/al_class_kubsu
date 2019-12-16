@@ -48,6 +48,8 @@ while True and cap.isOpened():
     k = cv2.waitKey(30) & 0xff  # Press 'ESC' for exiting video
     if k == 27:
         break
+    elif count >= 30:  # Take 30 face sample and stop video
+        break
 
 
 # Do a bit of cleanup
