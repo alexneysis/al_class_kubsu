@@ -12,9 +12,9 @@ Developed by Marcelo Rovai - MJRoBot.org @ 21Feb18
 import cv2
 import os
 
-# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 # cap = cv2.VideoCapture('./video_for_traine/ПрутскийTrim.mp4')
-cap = cv2.VideoCapture('./video_for_traine/НавальныйTrim.mp4')
+# cap = cv2.VideoCapture('./video_for_traine/НавальныйTrim.mp4')
 # cap = cv2.VideoCapture('./video_for_traine/ПутинTrim.mp4')
 cap.set(3, 640)  # set video width
 cap.set(4, 480)  # set video height
