@@ -1,8 +1,30 @@
 import numpy as np
-from . import config
 
-X = config.x_public
-y = config.y_public
+x_public = np.array([
+    [-2, 4, -1],
+    [4, 1, -1],
+    [1, 6, -1],
+    [2, 4, -1],
+    [6, 2, -1],
+
+])
+y_public = np.array([-1, -1, 1, 1, 1])
+eta_public = 1
+
+# Private dataset
+x_private = np.array([
+    [4, 3, -1],
+    [7, 3, -1],
+    [1, 6.5, -1],
+    [2.6, 4.5, -1],
+    [2.4, 6.5, -1],
+    [4, 6.5, -1],
+    [2.5, 8.5, -1],
+
+])
+y_private = np.array([-1, -1, 1, 1, 1, 1, 1])
+
+eta_private = 0.1
 
 def perceptron_sgd(X, Y):
     w = np.zeros(len(X[0]))
@@ -17,5 +39,6 @@ def perceptron_sgd(X, Y):
     return w
 
 
-w = perceptron_sgd(X, y)
+w = perceptron_sgd(x_public, y_public)
+# w = perceptron_sgd(x_private, y_private)
 print(w)

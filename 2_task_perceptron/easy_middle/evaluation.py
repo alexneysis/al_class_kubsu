@@ -1,10 +1,32 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-import config
+x_public = np.array([
+    [-2, 4, -1],
+    [4, 1, -1],
+    [1, 6, -1],
+    [2, 4, -1],
+    [6, 2, -1],
 
-X = config.x_public
-y = config.y_public
+])
+y_public = np.array([-1, -1, 1, 1, 1])
+eta_public = 1
+
+# Private dataset
+x_private = np.array([
+    [4, 3, -1],
+    [7, 3, -1],
+    [1, 6.5, -1],
+    [2.6, 4.5, -1],
+    [2.4, 6.5, -1],
+    [4, 6.5, -1],
+    [2.5, 8.5, -1],
+
+])
+y_private = np.array([-1, -1, 1, 1, 1, 1, 1])
+
+eta_private = 0.1
+
 
 def perceptron_sgd_plot(X, Y):
     '''
@@ -15,7 +37,7 @@ def perceptron_sgd_plot(X, Y):
     :return: weight vector as a numpy array
     '''
     w = np.zeros(len(X[0]))
-    eta = config.eta_public
+    eta = eta_public
     n = 30
     errors = []
 
@@ -31,7 +53,7 @@ def perceptron_sgd_plot(X, Y):
     return w
 
 
-for d, sample in enumerate(X):
+for d, sample in enumerate(x_private):
     # Plot the negative samples
     if d < 2:
         plt.scatter(sample[0], sample[1], s=120, marker='_', linewidths=2, color='black')
@@ -40,11 +62,11 @@ for d, sample in enumerate(X):
         plt.scatter(sample[0], sample[1], s=120, marker='+', linewidths=2, color='purple')
 
 # Add our test samples
-plt.scatter(5, 8, s=120, marker='+', linewidths=2, color='green')
-plt.scatter(8, 1, s=120, marker='_', linewidths=2, color='blue')
+plt.scatter(5, 4, s=120, marker='+', linewidths=2, color='green')
+plt.scatter(0, 1, s=120, marker='_', linewidths=2, color='blue')
 
 # Print the hyperplane calculated by perceptron_sgd()
-w = perceptron_sgd_plot(X, y)
+w = perceptron_sgd_plot(x_private, x_private)
 x2 = [w[0], w[1], -w[1], w[0]]
 x3 = [w[0], w[1], w[1], -w[0]]
 
