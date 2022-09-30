@@ -3,7 +3,7 @@ Pillow==6.2.1
 PyYAML==5.1.2
 Theano==1.0.4
 h5py==2.10.0
-joblib==0.14.0
+joblib==1.2.0
 numpy==1.14.5
 pandas==0.25.2
 protobuf==3.10.0
